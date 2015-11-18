@@ -1,0 +1,20 @@
+
+
+  <body>
+  <h1>List of Shows</h1>
+
+    <ul>
+      <% @shows.each do |show| %>
+        <li>Show: <%= show.title %> (<%= show.network %>)</li>
+        <li>Year: <%= show.starting_year %></li>
+        <li>Synopsis: <%= show.synopsis %></li>
+        <li>Genre: <%= show.genre %></li>
+        <li><%= "  " %></li>
+      <% end %>
+    </ul>
+
+    <form action="/television_shows/new">
+      <input type="submit" value="New Show??">
+    </form>
+
+  </body>

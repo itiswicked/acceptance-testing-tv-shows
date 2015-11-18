@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h1>Add Show Details</h1>
+
+    <form action="/television_shows" method="post">
+
+      <label for="Title">Title:</label>
+      <input type="text" id="Title" name="title"><br />
+
+      <label for="Network">Network:</label>
+      <input type="text" id="Network" name="network"><br />
+
+      <label for="Starting Year">Starting Year:</label>
+      <input type="text" id="Starting Year" name="starting_year"><br />
+
+      <label for="Synopsis">Synopsis:</label>
+      <input type="text" id="Synopsis" name="synopsis"><br />
+
+      <label for="Genre">Genre</label>
+        <select name="Genre">
+        <option value="">Genre:</option>
+        <option value="Action">Action</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Drama">Drama</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Fantasy">Fantasy</option>
+      </select><br />
+
+      <input type="submit" value="Add TV Show">
+    </form>
+
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+  </body>
+</html>
