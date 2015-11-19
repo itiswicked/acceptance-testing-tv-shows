@@ -5,10 +5,10 @@ require "spec_helper"
 # So that I can encourage others to binge watch it
 #
 # Acceptance Criteria:
-# []  I must provide the title, network, and starting year, genre, and synopsis
-# []  The genre must be one of the following: Action, Mystery,
+# [X]  I must provide the title, network, and starting year, genre, and synopsis
+# [X]  The genre must be one of the following: Action, Mystery,
 #     Drama, Comedy, Fantasy
-# []  If any of the above criteria is left blank, the form should be
+# [X]  If any of the above criteria is left blank, the form should be
 #     re-displayed with the failing validation message
 
 feature "user adds a new TV show" do

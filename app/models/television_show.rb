@@ -18,13 +18,13 @@ class TelevisionShow
   end
 
   def valid?
-    attributes_not_empty? && title_does_not_exist?
+    !attributes_empty? && !title_already_exists?
   end
 
   def errors
     errors = []
-    errors << "Please fill in all required fields" unless attributes_not_empty?
-    errors << "The show has already been added" unless title_does_not_exist?
+    errors << "Please fill in all required fields" if attributes_empty?
+    errors << "The show has already been added" if title_already_exists?
     errors.empty? ? nil : errors
   end
 
@@ -39,12 +39,16 @@ class TelevisionShow
     end
   end
 
-  def attributes_not_empty?
-    !title.empty? && !network.empty? && !starting_year.empty? && !synopsis.empty? && !genre.empty?
+  def attributes_empty?
+    title.empty? ||
+    network.empty? ||
+    starting_year.empty? ||
+    synopsis.empty? ||
+    genre.empty?
   end
 
-  def title_does_not_exist?
-    !CSV
+  def title_already_exists?
+    CSV
       .readlines('television-shows.csv')
       .map { |tv_show| tv_show[0] }
       .include?(title)

@@ -70,12 +70,13 @@ describe TelevisionShow do
 
   describe "#errors" do
     it 'returns an empty array when errors are called on a valid object' do
-      expect(tv_show.errors).to eq([])
+      expect(tv_show.errors).to eq(nil)
     end
 
     it 'if missing field, returns error string requesting required fields' do
       tv_show3 = TelevisionShow.new("", "NBC", 1994,
                          "Six friends living in New York city", "Comedy")
+binding.pry
       expect(tv_show3.errors).to eq (["Please fill in all required fields"])
     end
 

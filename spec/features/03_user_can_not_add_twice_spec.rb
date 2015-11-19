@@ -5,9 +5,9 @@ require 'spec_helper'
 # So that I don't have duplicate entries
 
 # Acceptance Criteria:
-# [] If the title is the same as a show that I've already added, the details are not saved to the csv
-# [] If the title is the same as a show that I've already added, I will be shown an error that says "The show has already been added".
-# [] If the details of the show are not saved, I will remain on the new form page
+# [X] If the title is the same as a show that I've already added, the details are not saved to the csv
+# [X] If the title is the same as a show that I've already added, I will be shown an error that says "The show has already been added".
+# [X] If the details of the show are not saved, I will remain on the new form page
 
 feature "user receives an error message if they try to add the same show twice" do
 
